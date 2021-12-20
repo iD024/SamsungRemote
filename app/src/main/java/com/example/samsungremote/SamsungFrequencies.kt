@@ -1,23 +1,25 @@
 package com.example.samsungremote
 
-open class SamsungFrequencys {
+open class SamsungFrequencies {
 
     companion object {
-        fun hex2dec(irData: String): IntArray {
+        fun hex2dec(irData: String): MutableList<Int> {
             val hexList: MutableList<String> = irData.split(" ").toMutableList()
             hexList.removeAt(0) // dummy
 
             var frequency: Int = hexList.removeAt(0).toInt(16) // frequency
             frequency = (1000000 / (frequency * 0.241246)).toInt()
+            hexList.removeAt(0) // dummy
+            hexList.removeAt(0) // dummy
 
             val multiplier = 1000000 / frequency
-            val codeSequence: MutableList<Int> = mutableListOf()
+            val codeSequence: MutableList<Int> = mutableListOf(frequency)
             for (hexFrequency in hexList) {
                 codeSequence.add(hexFrequency.toInt(16) * multiplier)
             }
             hexList.add(0, frequency.toString())
 
-            return codeSequence.toIntArray()
+            return codeSequence
         }
 
         const val power =

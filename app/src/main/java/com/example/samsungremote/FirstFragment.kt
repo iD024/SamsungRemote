@@ -8,21 +8,23 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
-import com.example.samsungremote.SamsungFrequencys.Companion.chDown
-import com.example.samsungremote.SamsungFrequencys.Companion.chUp
-import com.example.samsungremote.SamsungFrequencys.Companion.down
-import com.example.samsungremote.SamsungFrequencys.Companion.enter
-import com.example.samsungremote.SamsungFrequencys.Companion.hex2dec
-import com.example.samsungremote.SamsungFrequencys.Companion.left
-import com.example.samsungremote.SamsungFrequencys.Companion.menu
-import com.example.samsungremote.SamsungFrequencys.Companion.mute
-import com.example.samsungremote.SamsungFrequencys.Companion.power
-import com.example.samsungremote.SamsungFrequencys.Companion.right
-import com.example.samsungremote.SamsungFrequencys.Companion.smartHub
-import com.example.samsungremote.SamsungFrequencys.Companion.up
-import com.example.samsungremote.SamsungFrequencys.Companion.volumeDown
-import com.example.samsungremote.SamsungFrequencys.Companion.volumeUp
+import com.example.samsungremote.SamsungFrequencies.Companion.chDown
+import com.example.samsungremote.SamsungFrequencies.Companion.chUp
+import com.example.samsungremote.SamsungFrequencies.Companion.down
+import com.example.samsungremote.SamsungFrequencies.Companion.enter
+import com.example.samsungremote.SamsungFrequencies.Companion.hex2dec
+import com.example.samsungremote.SamsungFrequencies.Companion.left
+import com.example.samsungremote.SamsungFrequencies.Companion.menu
+import com.example.samsungremote.SamsungFrequencies.Companion.mute
+import com.example.samsungremote.SamsungFrequencies.Companion.power
+import com.example.samsungremote.SamsungFrequencies.Companion.right
+import com.example.samsungremote.SamsungFrequencies.Companion.smartHub
+import com.example.samsungremote.SamsungFrequencies.Companion.up
+import com.example.samsungremote.SamsungFrequencies.Companion.volumeDown
+import com.example.samsungremote.SamsungFrequencies.Companion.volumeUp
+import com.example.samsungremote.SamsungFrequencies.Companion.exit
 import com.example.samsungremote.databinding.FragmentFirstBinding
+import java.lang.Exception
 
 
 /**
@@ -53,23 +55,33 @@ class FirstFragment : Fragment() {
             return
         }
 
-        binding.ButtonPower.setOnClickListener { mCIR!!.transmit(38028, hex2dec(power)) }
-        binding.ButtonMenu.setOnClickListener { mCIR!!.transmit(38028, hex2dec(menu)) }
+        binding.ButtonPower.setOnClickListener { transmit(hex2dec(power)) }
+        binding.ButtonMenu.setOnClickListener { transmit(hex2dec(menu)) }
+        binding.ButtonReturn.setOnClickListener { transmit(hex2dec(exit)) }
 
-        binding.buttonVolUp.setOnClickListener { mCIR!!.transmit(38028, hex2dec(volumeUp)) }
-        binding.buttonVolDown.setOnClickListener { mCIR!!.transmit(38028, hex2dec(volumeDown)) }
-        binding.ButtonMute.setOnClickListener { mCIR!!.transmit(38028, hex2dec(mute)) }
+        binding.buttonVolUp.setOnClickListener { transmit(hex2dec(volumeUp)) }
+        binding.buttonVolDown.setOnClickListener { transmit(hex2dec(volumeDown)) }
+        binding.ButtonMute.setOnClickListener { transmit(hex2dec(mute)) }
 
-        binding.buttonCHUp.setOnClickListener { mCIR!!.transmit(38028, hex2dec(chUp)) }
-        binding.buttonCHDown.setOnClickListener { mCIR!!.transmit(38028, hex2dec(chDown)) }
+        binding.buttonCHUp.setOnClickListener { transmit(hex2dec(chUp)) }
+        binding.buttonCHDown.setOnClickListener { transmit(hex2dec(chDown)) }
 
-        binding.ButtonUp.setOnClickListener { mCIR!!.transmit(38028, hex2dec(up)) }
-        binding.ButtonDown.setOnClickListener { mCIR!!.transmit(38028, hex2dec(down)) }
-        binding.ButtonRight.setOnClickListener { mCIR!!.transmit(38028, hex2dec(right)) }
-        binding.ButtonLeft.setOnClickListener { mCIR!!.transmit(38028, hex2dec(left)) }
+        binding.ButtonUp.setOnClickListener { transmit(hex2dec(up)) }
+        binding.ButtonDown.setOnClickListener { transmit(hex2dec(down)) }
+        binding.ButtonRight.setOnClickListener { transmit(hex2dec(right)) }
+        binding.ButtonLeft.setOnClickListener { transmit(hex2dec(left)) }
 
-        binding.ButtonEnter.setOnClickListener { mCIR!!.transmit(38028, hex2dec(enter)) }
-        binding.SmartHubButton.setOnClickListener { mCIR!!.transmit(38028, hex2dec(smartHub)) }
+        binding.ButtonEnter.setOnClickListener { transmit(hex2dec(enter)) }
+        binding.SmartHubButton.setOnClickListener { transmit(hex2dec(smartHub)) }
+    }
+
+    private fun transmit(irData: MutableList<Int>) {
+        try {
+            val frequency = irData.removeAt(0)
+            mCIR!!.transmit(frequency, irData.toIntArray())
+        } catch (e: Exception) {
+            Log.e("mCIR Transmit", "ERROR Transmitting data")
+        }
     }
 
     override fun onDestroyView() {

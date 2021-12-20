@@ -9,151 +9,180 @@
     <Button
         android:id="@+id/button_VolUp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="592dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="44dp"
         android:onClick="onVolumeUpClicked"
         android:text="@string/VolumeUp"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.047"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonPower"
         tools:visibility="visible" />
 
     <Button
         android:id="@+id/button_CHUp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="592dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="4dp"
         android:onClick="onVolumeUpClicked"
         android:text="@string/ChannelUp"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.952"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonPower"
         tools:visibility="visible" />
 
     <Button
         android:id="@+id/button_VolDown"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="544dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
         android:text="@string/VolumeDown"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_VolUp"
         tools:visibility="visible" />
 
     <Button
         android:id="@+id/button_CHDown"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="544dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="4dp"
         android:text="@string/ChannelDown"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_CHUp"
         tools:visibility="visible" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/ButtonPower"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="242dp"
         android:clickable="true"
         android:src="@android:drawable/ic_lock_power_off"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="11dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
 
     <Button
         android:id="@+id/ButtonMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
         android:text="@string/menu"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="86dp"
-        tools:layout_editor_absoluteY="19dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/ButtonReturn"
+        android:layout_width="131dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/returnText"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/ButtonDown"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonLeft"
         tools:visibility="visible" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/ButtonMute"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="182dp"
+        android:layout_marginTop="28dp"
         android:clickable="true"
         android:src="@android:drawable/stat_notify_call_mute"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="118dp"
-        tools:layout_editor_absoluteY="83dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_VolDown"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/ButtonEnter"
+        android:layout_width="114dp"
+        android:layout_height="93dp"
+        android:layout_marginTop="8dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonUp"
         tools:visibility="visible" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/ButtonUp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="364dp"
+        android:layout_marginTop="128dp"
         android:clickable="true"
         android:src="@android:drawable/arrow_up_float"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="174dp"
-        tools:layout_editor_absoluteY="118dp"
-        tools:visibility="visible" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/ButtonLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:src="@android:drawable/arrow_down_float"
-        android:visibility="visible"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="189dp"
-        tools:visibility="visible" />
-
-    <Button
-        android:id="@+id/ButtonEnter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="visible"
-        tools:layout_editor_absoluteX="155dp"
-        tools:layout_editor_absoluteY="181dp"
-        tools:visibility="visible" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/ButtonDown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:src="@android:drawable/arrow_down_float"
-        android:visibility="visible"
-        tools:layout_editor_absoluteX="174dp"
-        tools:layout_editor_absoluteY="245dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SmartHubButton"
         tools:visibility="visible" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/ButtonRight"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="181dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="28dp"
         android:clickable="true"
         android:src="@android:drawable/arrow_down_float"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="261dp"
-        tools:layout_editor_absoluteY="189dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintStart_toEndOf="@+id/ButtonEnter"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonUp"
         tools:visibility="visible" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/SmartHubButton"
+        android:id="@+id/ButtonDown"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="364dp"
+        android:layout_marginTop="12dp"
         android:clickable="true"
-        android:src="@android:drawable/btn_star_big_on"
+        android:src="@android:drawable/arrow_down_float"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="339dp"
-        tools:layout_editor_absoluteY="229dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonEnter"
         tools:visibility="visible" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/ButtonLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="182dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="8dp"
+        android:clickable="true"
+        android:src="@android:drawable/arrow_down_float"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/ButtonEnter"
+        app:layout_constraintHorizontal_bias="0.988"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonUp"
+        tools:visibility="visible" />
+
+    <ImageButton
+        android:id="@+id/SmartHubButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/button_rounded_corner"
+        android:src="@android:drawable/btn_star_big_on"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonMenu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,13 +22,13 @@
         android:id="@+id/button_CHUp"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="4dp"
         android:onClick="onVolumeUpClicked"
         android:text="@string/ChannelUp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ButtonPower"
+        app:layout_constraintTop_toBottomOf="@+id/SourceButton"
         tools:visibility="visible" />
 
     <Button
@@ -82,13 +82,16 @@
         android:id="@+id/ButtonReturn"
         android:layout_width="131dp"
         android:layout_height="54dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="120dp"
         android:text="@string/returnText"
         android:visibility="visible"
+        app:icon="@drawable/ic_baseline_backspace_24"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/ButtonDown"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.177"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ButtonLeft"
+        app:layout_constraintVertical_bias="0.611"
         tools:visibility="visible" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -109,6 +112,7 @@
         android:layout_height="93dp"
         android:layout_marginTop="8dp"
         android:visibility="visible"
+        app:iconSize="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -121,7 +125,7 @@
         android:layout_height="364dp"
         android:layout_marginTop="128dp"
         android:clickable="true"
-        android:src="@android:drawable/arrow_up_float"
+        android:src="@drawable/ic_baseline_arrow_drop_up_24"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -136,7 +140,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="28dp"
         android:clickable="true"
-        android:src="@android:drawable/arrow_down_float"
+        android:src="@drawable/ic_baseline_arrow_right_24"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.074"
@@ -150,7 +154,7 @@
         android:layout_height="364dp"
         android:layout_marginTop="12dp"
         android:clickable="true"
-        android:src="@android:drawable/arrow_down_float"
+        android:src="@drawable/ic_baseline_arrow_drop_down_24"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -165,7 +169,7 @@
         android:layout_marginTop="27dp"
         android:layout_marginEnd="8dp"
         android:clickable="true"
-        android:src="@android:drawable/arrow_down_float"
+        android:src="@drawable/ic_baseline_arrow_left_24"
         android:visibility="visible"
         app:layout_constraintEnd_toStartOf="@+id/ButtonEnter"
         app:layout_constraintHorizontal_bias="0.988"
@@ -179,10 +183,20 @@
         android:layout_height="100dp"
         android:layout_marginTop="72dp"
         android:background="@drawable/button_rounded_corner"
-        android:src="@android:drawable/btn_star_big_on"
+        android:src="@drawable/ic_baseline_apps_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ButtonMenu" />
+
+    <Button
+        android:id="@+id/SourceButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Source"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/ButtonMenu"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

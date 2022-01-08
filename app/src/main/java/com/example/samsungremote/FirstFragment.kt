@@ -23,6 +23,7 @@ import com.example.samsungremote.SamsungFrequencies.Companion.mute
 import com.example.samsungremote.SamsungFrequencies.Companion.power
 import com.example.samsungremote.SamsungFrequencies.Companion.right
 import com.example.samsungremote.SamsungFrequencies.Companion.smartHub
+import com.example.samsungremote.SamsungFrequencies.Companion.source
 import com.example.samsungremote.SamsungFrequencies.Companion.up
 import com.example.samsungremote.SamsungFrequencies.Companion.volumeDown
 import com.example.samsungremote.SamsungFrequencies.Companion.volumeUp
@@ -56,7 +57,7 @@ class FirstFragment : Fragment() {
         vibrate = getSystemService(view.context, Vibrator::class.java) as Vibrator
         mCIR = getSystemService(view.context, ConsumerIrManager::class.java) as ConsumerIrManager
         if (mCIR == null || !mCIR!!.hasIrEmitter()) {
-            Log.e("mCIR Detection", "No IR Emitter found");
+            Log.e("mCIR Detection", "No IR Emitter found")
             return
         }
 
@@ -79,6 +80,7 @@ class FirstFragment : Fragment() {
 
         binding.ButtonEnter.setOnClickListener { transmit(hex2dec(enter)) }
         binding.SmartHubButton.setOnClickListener { transmit(hex2dec(smartHub)) }
+        binding.SourceButton.setOnClickListener { transmit(hex2dec(source)) }
     }
 
     private fun transmit(irData: MutableList<Int>) {
